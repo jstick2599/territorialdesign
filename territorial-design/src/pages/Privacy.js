@@ -7,7 +7,7 @@ function Privacy() {
             <h1 className="privacyH1">Privacy Policy</h1>
             <p className="privacyP"><strong>Last Updated: March 19, 2025</strong></p>
             
-            <h2 className="privacyH2">We value your privacy. Here’s how we handle data related to multifamilycalc.com:</h2>
+            <h2 className="privacyH2">We value your privacy. Here’s how we handle data related to TerritorialDesign.com:</h2>
             <h3 className="privacyH3">No Personal Data Collection</h3>
             <p className="privacyP">Our multifamily calculator does not collect or store any personal information you input, such as property values or NOI calculations. All computations happen locally on your device.</p>
             
