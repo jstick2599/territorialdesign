@@ -1,6 +1,7 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 import "./TerritorialDesign.css";
+import { useNavigate } from "react-router-dom";
 
 function TerritorialDesign() {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -28,6 +29,8 @@ function TerritorialDesign() {
     const goToSlide = (index) => {
         setCurrentSlide(index);
     };
+    const navigate = useNavigate();
+    const Privacy = () => navigate("/Privacy");
 
     return (
         <div className="container">
@@ -55,6 +58,7 @@ function TerritorialDesign() {
                     </div>
                 </div>
             </div>
+            <button onClick={Privacy}>click</button>
         </div>
     );
 }
