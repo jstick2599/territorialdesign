@@ -1,7 +1,34 @@
-import React from "react";
+
+import React, { useState, useEffect } from "react";
 import "./TerritorialDesign.css";
 
 function TerritorialDesign() {
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+    // Array of fake image URLs (using Lorem Picsum for placeholder images)
+    const images = [
+        "/PrimaryBathroom.jpg",
+        "/PrimaryBedroomA.jpg",
+        "/GuestBedroomB.jpg",
+        "/GuestBedroomA.jpg",
+        "/GuestBathroom.jpg",
+    ];
+
+    // Auto-slide every 3 seconds
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
+        }, 3000); // Change slide every 3 seconds
+
+        // Cleanup interval on component unmount
+        return () => clearInterval(interval);
+    }, [images.length]);
+
+    // Handle manual navigation
+    const goToSlide = (index) => {
+        setCurrentSlide(index);
+    };
+
     return (
         <div className="container">
             <div className="text-section">
@@ -11,9 +38,22 @@ function TerritorialDesign() {
                 </p>
             </div>
             <div className="image-section">
-                {/* <img src="/images/southwest1.jpg" alt="Southwest Design 1" />
-                <img src="/images/southwest2.jpg" alt="Southwest Design 2" />
-                <img src="/images/southwest3.jpg" alt="Southwest Design 3" /> */}
+                <div className="slideshow">
+                    <img
+                        src={images[currentSlide]}
+                        alt={`Southwest Design ${currentSlide + 1}`}
+                        className="slideshow-image"
+                    />
+                    <div className="dots">
+                        {images.map((_, index) => (
+                            <span
+                                key={index}
+                                className={`dot ${index === currentSlide ? "active" : ""}`}
+                                onClick={() => goToSlide(index)}
+                            ></span>
+                        ))}
+                    </div>
+                </div>
             </div>
         </div>
     );
