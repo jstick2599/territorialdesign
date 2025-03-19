@@ -9,7 +9,7 @@ function Privacy() {
             
             <h2 className="privacyH2">We value your privacy. Here’s how we handle data related to TerritorialDesign.com:</h2>
             <h3 className="privacyH3">No Personal Data Collection</h3>
-            <p className="privacyP">Our multifamily calculator does not collect or store any personal information you input, such as property values or NOI calculations. All computations happen locally on your device.</p>
+            <p className="privacyP">Our website does not collect or store any personal information.</p>
             
             <h3>Google AdSense</h3>
             <p className="privacyP">We use Google AdSense to display ads on our site. Google and its partners may use cookies or similar technologies to serve personalized ads based on your browsing behavior. This data collection is managed by Google, not us. For more details, see Google’s Privacy Policy and learn how to opt out of personalized ads.</p>
